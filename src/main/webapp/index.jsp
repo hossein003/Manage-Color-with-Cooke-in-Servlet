@@ -2,24 +2,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>JSP - Manage Color</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
-<form>
-    <label for="green">سبز</label>
-    <input type="radio" id="green" name="color" value="green">
+
+<body >
+<form action="/colorManager" method="post">
+    <input type="radio" id="green" name="color" value="green"> Green
     <br>
-    <label for="yellow">زرد</label>
-    <input type="radio" id="yellow" name="color" value="yellow">
+    <input type="radio" id="yellow" name="color" value="yellow"> Yellow
     <br>
-    <label for="red">قرمز</label>
-    <input type="radio" id="red" name="color" value="red">
+    <input type="radio" id="red" name="color" value="red"> Red
     <br>
-    <label for="blue">آبی</label>
-    <input type="radio" id="blue" name="color" value="blue">
+    <input type="radio" id="blue" name="color" value="blue"> Blue
     <br>
-    <button type="submit">ثبت</button>
+    <button type="submit" name="submit">Accept</button>
 </form>
 </body>
 </html>

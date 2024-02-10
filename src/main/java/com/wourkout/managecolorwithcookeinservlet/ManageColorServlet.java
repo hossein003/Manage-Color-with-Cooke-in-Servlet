@@ -6,19 +6,21 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "color", value = "/color")
+@WebServlet(name = "colorManager", urlPatterns = {"/colorManager"})
 public class ManageColorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doProcess(req, resp);
+        process(req, resp);
+    }
+
+    private void process(HttpServletRequest req, HttpServletResponse resp) {
+        String color = req.getParameter("color");
+        Cookie cookie = new Cookie("color", color);
+        resp.addCookie(cookie);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doProcess(req, resp);
-    }
-
-    private void doProcess(HttpServletRequest req, HttpServletResponse resp) {
-
+        process(req, resp);
     }
 }
